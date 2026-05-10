@@ -15,6 +15,7 @@ import type {
   TotpLoginResponse,
   TotpLogin2FARequest
 } from '@/types'
+import { withBrandSettings } from '@/config/brand'
 
 /**
  * Login response type - can be either full auth or 2FA required
@@ -333,7 +334,7 @@ export function isAuthenticated(): boolean {
  */
 export async function getPublicSettings(): Promise<PublicSettings> {
   const { data } = await apiClient.get<PublicSettings>('/settings/public')
-  return data
+  return withBrandSettings(data)
 }
 
 export type WeChatOAuthMode = 'open' | 'mp'

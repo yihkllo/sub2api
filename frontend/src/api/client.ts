@@ -279,6 +279,15 @@ apiClient.interceptors.response.use(
     }
 
     // Network error
+    if (import.meta.env.DEV) {
+      console.error('[api] network error', {
+        method: error.config?.method,
+        url: error.config?.url,
+        baseURL: error.config?.baseURL,
+        code: error.code,
+        message: error.message
+      })
+    }
     return Promise.reject({
       status: 0,
       message: 'Network error. Please check your connection.'
