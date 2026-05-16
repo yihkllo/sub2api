@@ -15,20 +15,10 @@
   <!-- Default Home Page -->
   <div
     v-else
-    class="relative flex min-h-screen flex-col overflow-hidden bg-[#f7fbfa] text-gray-900 dark:bg-dark-950 dark:text-white"
+    class="relative flex min-h-screen flex-col overflow-hidden text-gray-900 dark:text-white"
   >
-    <!-- Background Decorations -->
-    <div class="pointer-events-none absolute inset-0 overflow-hidden">
-      <div
-        class="absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-primary-100/80 via-primary-50/30 to-transparent dark:from-primary-950/30 dark:via-dark-950 dark:to-transparent"
-      ></div>
-      <div
-        class="absolute left-0 top-0 h-full w-full bg-[linear-gradient(rgba(13,148,136,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(13,148,136,0.08)_1px,transparent_1px)] bg-[size:56px_56px] dark:bg-[linear-gradient(rgba(45,212,191,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(45,212,191,0.05)_1px,transparent_1px)]"
-      ></div>
-      <div
-        class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(20,184,166,0.12),transparent_34%),linear-gradient(135deg,transparent_0%,transparent_52%,rgba(15,23,42,0.04)_52%,rgba(15,23,42,0.04)_53%,transparent_53%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(20,184,166,0.16),transparent_32%)]"
-      ></div>
-    </div>
+    <!-- Starlight Background -->
+    <StarlightBackground />
 
     <!-- Header -->
     <header class="relative z-20 px-6 py-4">
@@ -115,10 +105,6 @@
         <div class="mb-12 flex flex-col items-center justify-between gap-12 pt-4 lg:flex-row lg:gap-16">
           <!-- Left: Text Content -->
           <div class="flex-1 text-center lg:text-left">
-            <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-white/80 px-3 py-1 text-xs font-medium text-primary-700 shadow-sm backdrop-blur dark:border-primary-900/60 dark:bg-dark-900/70 dark:text-primary-300">
-              <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
-              {{ t('home.liveRelay') }}
-            </div>
             <h1
               class="mb-4 text-4xl font-bold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"
             >
@@ -425,6 +411,7 @@ import { useI18n } from 'vue-i18n'
 import { useAuthStore, useAppStore } from '@/stores'
 import LocaleSwitcher from '@/components/common/LocaleSwitcher.vue'
 import Icon from '@/components/icons/Icon.vue'
+import StarlightBackground from '@/components/StarlightBackground.vue'
 
 const { t } = useI18n()
 
@@ -434,7 +421,7 @@ const appStore = useAppStore()
 // Site settings - directly from appStore (already initialized from injected config)
 const siteName = computed(() => appStore.cachedPublicSettings?.site_name || appStore.siteName || '云笺')
 const siteLogo = computed(() => appStore.cachedPublicSettings?.site_logo || appStore.siteLogo || '')
-const siteSubtitle = computed(() => appStore.cachedPublicSettings?.site_subtitle || 'AI API Gateway Platform')
+const siteSubtitle = computed(() => appStore.cachedPublicSettings?.site_subtitle || 'AI编码，开发者专业的平台')
 const docUrl = computed(() => appStore.cachedPublicSettings?.doc_url || appStore.docUrl || '')
 const homeContent = computed(() => appStore.cachedPublicSettings?.home_content || '')
 const primaryEndpoint = computed(() => appStore.cachedPublicSettings?.custom_endpoints?.[0])
@@ -621,7 +608,7 @@ onMounted(() => {
   color: #a78bfa;
 }
 .code-url {
-  color: #14b8a6;
+  color: #3b82f6;
 }
 .code-comment {
   color: #64748b;

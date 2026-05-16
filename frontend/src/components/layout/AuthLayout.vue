@@ -2,7 +2,7 @@
   <div class="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#f7fbfa] p-4 dark:bg-dark-950">
     <!-- Background -->
     <div
-      class="absolute inset-0 bg-[linear-gradient(rgba(13,148,136,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(13,148,136,0.08)_1px,transparent_1px)] bg-[size:48px_48px] dark:bg-[linear-gradient(rgba(45,212,191,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(45,212,191,0.05)_1px,transparent_1px)]"
+      class="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.08)_1px,transparent_1px)] bg-[size:48px_48px] dark:bg-[linear-gradient(rgba(96,165,250,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(96,165,250,0.05)_1px,transparent_1px)]"
     ></div>
 
     <!-- Decorative Elements -->
@@ -14,7 +14,7 @@
         class="absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-primary-300/70 via-primary-100/20 to-transparent dark:from-primary-500/30 dark:via-primary-900/10"
       ></div>
       <div
-        class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(20,184,166,0.14),transparent_34%)] dark:bg-[radial-gradient(circle_at_top,rgba(20,184,166,0.16),transparent_36%)]"
+        class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.14),transparent_34%)] dark:bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.16),transparent_36%)]"
       ></div>
     </div>
 
